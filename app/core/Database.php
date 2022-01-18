@@ -55,6 +55,10 @@ class Database
     public function sigle()
     {
         $this->execute();
-        return $this->stmt->fetch(PDO::FETCH_ASSOC); 
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
     }
 }
