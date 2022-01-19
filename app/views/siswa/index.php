@@ -1,6 +1,11 @@
 <div class="container mt-3">
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
+            <?php Flasher::flash()?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#formModal">
                 Add data
             </button>
@@ -32,11 +37,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="kelas" class="form-label">kelas</label>
-                        <input type="number" class="form-control" id="kelas" placeholder="john titor" name="kelas">
+                        <input type="number" class="form-control" id="kelas" placeholder="10" name="kelas">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">email</label>
-                        <input type="email" class="form-control" id="email" placeholder="john titor" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="johnttr@gmail.com" name="email">
                     </div>
                     <select class="form-select" aria-label="jurusan" name="jurusan">
                         <option value="multimedia">multimedia</option>
