@@ -5,12 +5,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 mb-3">
             <button type="button" class="btn btn-outline-primary tambahButton" data-bs-toggle="modal" data-bs-target="#formModal">
                 Add data
             </button>
-            <br>
-            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL ?>/siswa/cari" method="POST">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="nama siswa" aria-label="nama siswa" name="keyword" id="keyword" autocomplete="off" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-primary" type="submit" id="tombolCari">Cari</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
             <h3><?= $data["judul"] ?></h3>
             <ul class="list-group">
                 <?php foreach ($data["siswa"] as $siswa) : ?>
@@ -33,7 +45,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL ?>/siswa/tambah" method="post">
-                <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <label for="nama" class="form-label">nama</label>
                         <input type="text" class="form-control" id="nama" placeholder="john titor" name="nama">

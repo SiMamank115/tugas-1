@@ -57,4 +57,12 @@ class Siswa extends Controller
             exit;
         }
     }
+    public function cari()
+    {
+        $data["judul"] = "Daftar siswa";
+        $data["siswa"] = $this->model("Siswa_model")->cariDataSiswa();
+        $this->view("templates/header");
+        $this->view("siswa/index", $data);
+        $this->view("templates/footer");
+    }
 }
