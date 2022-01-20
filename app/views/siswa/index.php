@@ -1,7 +1,7 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-lg-6">
-            <?php Flasher::flash()?>
+            <?php Flasher::flash() ?>
         </div>
     </div>
     <div class="row">
@@ -15,9 +15,9 @@
             <ul class="list-group">
                 <?php foreach ($data["siswa"] as $siswa) : ?>
                     <li class="list-group-item"><?= $siswa["nama"] ?>
-                    <a href="<?= BASEURL ?>/siswa/hapus/<?= $siswa['id'] ?>" class="badge btn btn-danger m-0 me-1 float-end" onclick="return confirm('yakin?')">hapus</a>
-                    <a data-bs-toggle="modal" data-bs-target="#formModal" href="<?= BASEURL ?>/siswa/ubah/<?= $siswa['id'] ?>" class="badge btn btn-success m-0 me-1 float-end ubahButton">ubah</a>
-                    <a href="<?= BASEURL ?>/siswa/detail/<?= $siswa['id'] ?>" class="badge btn btn-primary m-0 me-1 float-end">detail</a>
+                        <a href="<?= BASEURL ?>/siswa/hapus/<?= $siswa['id'] ?>" class="badge btn btn-danger m-0 me-1 float-end" onclick="return confirm('yakin?')">hapus</a>
+                        <a data-bs-toggle="modal" data-bs-target="#formModal" href="<?= BASEURL ?>/siswa/ubah/<?= $siswa['id'] ?>" class="badge btn btn-success m-0 me-1 float-end ubahButton" data-id="<?= $siswa['id'] ?>">ubah</a>
+                        <a href="<?= BASEURL ?>/siswa/detail/<?= $siswa['id'] ?>" class="badge btn btn-primary m-0 me-1 float-end">detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -33,6 +33,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL ?>/siswa/tambah" method="post">
+                <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <label for="nama" class="form-label">nama</label>
                         <input type="text" class="form-control" id="nama" placeholder="john titor" name="nama">
@@ -46,8 +47,9 @@
                         <input type="email" class="form-control" id="email" placeholder="johnttr@gmail.com" name="email">
                     </div>
                     <select class="form-select" aria-label="jurusan" name="jurusan">
+                        <option value="-">-</option>
                         <option value="multimedia">multimedia</option>
-                        <option value="tkj">tkj</option> 
+                        <option value="tkj">tkj</option>
                         <option value="rpl">rpl</option>
                     </select>
             </div>
